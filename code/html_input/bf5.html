@@ -1,0 +1,1116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1099.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<title>Comprar Battlefield 5 Origin</title>
+<meta name="robots" content="index,follow,all" />
+<meta name="description" content="¡Comprar Battlefield 5 más barato en Instant-Gaming, la referencia para comprar tus juegos al mejor precio con entrega inmediata!" />
+<meta name="keywords" content="Comprar,Battlefield 5,Origin" />
+<meta http-equiv="Content-Language" content="es" />
+<meta name="google-signin-clientid" content="838762527992-af3vk70ipe4m8501kl7695adctrm1vc7.apps.googleusercontent.com" />
+<meta name="ig-usid" content="dd17a3f164fd2111154fa7cead9a7ad6" />
+<meta name="format-detection" content="telephone=no" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1" />
+<link rel="shortcut icon" type="image/png" href="https://www.instant-gaming.com/favicon.ico" />
+<link rel="apple-touch-icon" href="https://www.instant-gaming.com/apple-touch-icon.png" />
+<link rel="android-touch-icon" href="https://www.instant-gaming.com/apple-touch-icon.png" />
+<link href="https://plus.google.com/+InstantgamingPC" rel="publisher" />
+<link rel="canonical" href="https://www.instant-gaming.com/es/612-comprar-key-origin-battlefield-5/" /> <link href="/min/ig-igv1-css.css?v=1544010158" rel="stylesheet" type="text/css" /> <script src="/tools/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="/min/ig-igv1-js-product.js?v=1544010158" type="text/javascript"></script>
+
+<script>
+		var dataLayer = [];
+				dataLayer.push({ 'countryCode': 'ES' });
+				(function(w,d,s,l,i){ w[l]=w[l]||[];w[l].push({ 'gtm.start':
+		new Date().getTime(),event:'gtm.js' });var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-K27NW62');
+						dataLayer.push({"event":"eeProductDetailView","ecommerce":{"detail":{"products":[{"name":"Battlefield 5","id":"612","price":"39.98","category":"Origin"}]}}});
+						dataLayer.push({ 'event': 'done' });
+		</script>
+<meta property="og:title" content="Comprar Battlefield 5 Origin" />
+<meta property="og:site_name" content="Instant-Gaming.com" />
+<meta property="fb:app_id" content="252070411609330" />
+<meta property="og:url" content="https://www.instant-gaming.com/es/612-comprar-key-origin-battlefield-5/" /> <meta property="og:image" content="https://s1.gaming-cdn.com/images/products/612/orig/battlefield-5-cover.jpg" />
+<link rel="alternate" hreflang="fr" href="https://www.instant-gaming.com/fr/612-acheter-cle-origin-battlefield-5/" />
+<link rel="alternate" hreflang="en" href="https://www.instant-gaming.com/en/612-buy-key-origin-battlefield-5/" />
+<link rel="alternate" hreflang="de" href="https://www.instant-gaming.com/de/612-kaufen-key-origin-battlefield-5/" />
+<link rel="alternate" hreflang="es" href="https://www.instant-gaming.com/es/612-comprar-key-origin-battlefield-5/" />
+<link rel="alternate" hreflang="it" href="https://www.instant-gaming.com/it/612-comprare-key-origin-battlefield-5/" />
+<link rel="alternate" hreflang="pt" href="https://www.instant-gaming.com/pt/612-comprar-key-origin-battlefield-5/" />
+<link rel="alternate" hreflang="da" href="https://www.instant-gaming.com/da/612-koeb-key-origin-battlefield-5/" />
+<link rel="alternate" hreflang="nl" href="https://www.instant-gaming.com/nl/612-betaling-key-origin-battlefield-5/" />
+<link href="https://s1.gaming-cdn.com" rel="preconnect" crossorigin>
+<link href="https://s2.gaming-cdn.com" rel="preconnect" crossorigin>
+<link href="https://s3.gaming-cdn.com" rel="preconnect" crossorigin>
+</head>
+<body class=" act-product ct-ES">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K27NW62" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div id="backgroundLink" title="Battlefield 5" style="background: url(https://s1.gaming-cdn.com/images/products/612/background/612.jpg) center 0px no-repeat  #31475e;"></div>
+<div id="ig-header">
+<div class="ig-wrapper">
+<a id="ig-logo" href="https://www.instant-gaming.com/es/"></a>
+<form id="ig-search-form" action="https://www.instant-gaming.com/es/busquedas/" method="get" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" role="search">
+<meta itemprop="target" content="https://https://www.instant-gaming.com/es/busquedas/?q={search_term_string}" />
+<div id="ig-search">
+<input id="ig-header-search-box-input" type="text" name="q" autocomplete="off" spellcheck="false" autocapitalize="off" itemprop="query-input" /><input id="ig-header-search-box-submit" type="submit" value="" />
+</div>
+</form>
+<div id="ig-search-header-tpl" style="display: none">
+<select id="ig-search-sortby" name="sort_by">
+<option value="" selected="selected">Popularidad</option>
+<option value="name_asc">Nombre ↑</option>
+<option value="name_desc">Nombre ↓</option>
+<option value="price_asc">Precio ↑</option>
+<option value="price_desc">Precio ↓</option>
+<option value="reviews_avg_desc">Puntuaciones ↓</option>
+<option value="reviews_avg_asc">Puntuaciones ↑</option>
+<option value="discount_asc">Descuento ↑</option>
+<option value="discount_desc">Descuento ↓</option>
+<option value="avail_date_asc">Fecha de lanzamiento ↑</option>
+<option value="avail_date_desc">Fecha de lanzamiento ↓</option>
+</select>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$('#ig-header-search-box-input').igsearchbox({
+		algolia_appid: 'QKNHP8TC3Y',
+		algolia_key: '4813969db52fc22897f8b84bac1299ad',
+		lang: 'es',
+		filters: '(sites:ig OR sites:ps) AND (region:Worldwide OR region:ES OR region:Europe OR region:EUR)',
+		currency_format: '%s€',
+		currency_tx: null,
+		mapper: function(hit) {
+			hit.platform_type = hit.type.toLowerCase().replace(/ /g, '').replace(/\./g, '');
+			url_platform = (hit.platform_type == 'official website' ? '' : hit.platform_type + '-');
+
+			if (hit.sites.indexOf('ig') > -1) {
+				hit.price = hit.sites_prices.ig;
+				hit.url = "https://www.instant-gaming.com/es/" + hit.prod_id + "-comprar-key-" + url_platform + hit.seo_name + '/';
+			} else {
+				hit.price = hit.sites_prices.ps;
+				hit.url = "https://www.press-start.com/es/" + hit.prod_id + "-comprar-key-" + url_platform + hit.seo_name + '/';
+				hit.url_target = '_blank';
+			}
+
+			hit.cover = (hit.is_draft == 1 ? "/themes/igv1/images/nocover-157x218.png" : "/images/products/" + hit.prod_id + "/157x218/" + hit.prod_id + ".jpg");
+		}
+	});
+
+});
+</script>
+</div>
+<div class="submenu-container">
+<div class="ig-loginbox-wrapper tright">
+<a href="/es/crea-tu-cuenta/" id="ig-register-link" style="display: none" />
+<a class="ig-logged-link ig-logged-link-support ig-show-loginbox" href="/es/contactanos/">Soporte 24/7</a>
+<a class="ig-logged-link ig-logged-link-profile ig-show-loginbox" href="#">Mi cuenta</a>
+</div>
+</div>
+</div>
+<div id="ig-main-container">
+<div id="home-top-banner-wrapper">
+</div>
+<div class="ig-wrapper ig-mainwrapper">
+<input type="checkbox" id="ig-responsive-menu-drop" />
+<label for="ig-responsive-menu-drop" id="ig-responsive-menu-overlay"></label>
+<label for="ig-responsive-menu-drop" id="ig-responsive-menu-button"></label>
+<div id="ig-panel-left">
+<div id="ig-panel-left-responsive-wrapper">
+<div class="ig-loginbox-responsive ig-loginbox-wrapper ">
+<a class="ig-logged-link out ig-logged-link-profile ig-show-loginbox" href="#">Mi cuenta</a>
+<a class="ig-logged-link out ig-logged-link-support ig-show-loginbox" href="/es/contactanos/">Soporte 24/7</a>
+</div>
+<form id="ig-pm-filters" action="/es/busquedas/" method="get">
+<div id="ig-pm-links">
+<div class="ig-sections-content mainshadow">
+<div id="ig-pm-platformlinks">
+<a href="/es/juegos/steam/" id="product-menu-platform-steam"><div class="badge steam"></div>Steam</a>
+<a href="/es/juegos/uplay/" id="product-menu-platform-uplay"><div class="badge uplay"></div>Uplay</a>
+<a href="/es/juegos/origin/" id="product-menu-platform-origin"><div class="badge origin"></div>Origin</a>
+<a href="/es/juegos/battle-net/" id="product-menu-platform-battle-net"><div class="badge battlenet"></div>Battle.net</a>
+<a href="/es/juegos/playstation/" id="product-menu-platform-playstation"><div class="badge playstation"></div>PS4</a>
+<a href="/es/juegos/xbox/" id="product-menu-platform-xbox"><div class="badge xbox"></div>Xbox</a>
+<a href="/es/juegos/indies/" id="product-menu-platform-indies-com"><div class="badge indies-com"></div>Indies</a>
+<a href="/es/busquedas/" class="ig-pm-morefilters-toggle" id="product-menu-platform-others"><div class="badge others"></div>Otros</a>
+</div>
+<hr>
+<div id="ig-pm-genrelinks">
+<ul>
+<li><a href="/es/juegos/fps/">FPS</a></li>
+<li><a href="/es/juegos/mmo/">MMO</a></li>
+<li><a href="/es/juegos/acción/">Acción</a></li>
+<li><a href="/es/juegos/deporte/">Deporte</a></li>
+<li><a href="/es/juegos/simulación/">Simulación</a></li>
+<li><a href="/es/juegos/multijugador/">Multijugador</a></li>
+<li><a href="/es/juegos/cooperación/">Cooperación</a></li>
+<a href="/es/busquedas" class="ig-pm-morefilters-toggle">...</a>
+</ul>
+</div>
+</div>
+</div>
+<div id="ig-pm-morefilters">
+<div id="ig-pm-morefilters-wrapper" style="display: none">
+
+<div class="ig-pm-morefilters-head">Plataforma</div>
+<div class="ig-sections-content mainshadow" id="ig-pm-platformfilters">
+<label><input type="checkbox" name="all_types" value="1" checked="checked" /><span></span> Todas las plataformas</label>
+<hr />
+<label><input type="checkbox" name="type[]" value="battle.net" /><span></span> Battle.net</label>
+<label><input type="checkbox" name="type[]" value="gog.com" /><span></span> GOG.com</label>
+<label><input type="checkbox" name="type[]" value="ncsoft" /><span></span> Ncsoft</label>
+<label><input type="checkbox" name="type[]" value="nintendo" /><span></span> Nintendo</label>
+<label><input type="checkbox" name="type[]" value="official website" /><span></span> Official Website</label>
+<label><input type="checkbox" name="type[]" value="origin" /><span></span> Origin</label>
+<label><input type="checkbox" name="type[]" value="other" /><span></span> Other</label>
+<label><input type="checkbox" name="type[]" value="playstation" /><span></span> Playstation</label>
+<label><input type="checkbox" name="type[]" value="rockstar" /><span></span> Rockstar</label>
+<label><input type="checkbox" name="type[]" value="software" /><span></span> Software</label>
+<label><input type="checkbox" name="type[]" value="steam" /><span></span> Steam</label>
+<label><input type="checkbox" name="type[]" value="uplay" /><span></span> Uplay</label>
+<label><input type="checkbox" name="type[]" value="xbox" /><span></span> Xbox</label>
+<label><input type="checkbox" name="type[]" value="xbox play anywhere" /><span></span> Xbox Play Anywhere</label>
+<label><input type="checkbox" name="plat[]" value="22" /><span></span> Mac</label>
+<label><input type="checkbox" name="plat[]" value="30" /><span></span> Linux</label>
+<label><input type="checkbox" name="plat[]" value="31" /><span></span> VR Ready</label>
+</div>
+
+<div class="ig-pm-morefilters-head">Género</div>
+<div class="ig-sections-content mainshadow" id="ig-pm-genrefilters">
+<label><input type="checkbox" name="all_cats" value="1" checked="checked" /><span></span> Todos</label>
+<hr />
+<label><input type="checkbox" name="cat[]" value="1" /><span></span> Acción</label>
+<label><input type="checkbox" name="cat[]" value="2" /><span></span> Arcade</label>
+<label><input type="checkbox" name="cat[]" value="4" /><span></span> Aventura</label>
+<label><input type="checkbox" name="cat[]" value="5" /><span></span> Beat'em all</label>
+<label><input type="checkbox" name="cat[]" value="8" /><span></span> Carreras</label>
+<label><input type="checkbox" name="cat[]" value="24" /><span></span> Cooperación</label>
+<label><input type="checkbox" name="cat[]" value="16" /><span></span> Deporte</label>
+<label><input type="checkbox" name="cat[]" value="37" /><span></span> Early Access</label>
+<label><input type="checkbox" name="cat[]" value="6" /><span></span> Entrenamiento</label>
+<label><input type="checkbox" name="cat[]" value="17" /><span></span> Estrategia</label>
+<label><input type="checkbox" name="cat[]" value="9" /><span></span> FPS</label>
+<label><input type="checkbox" name="cat[]" value="35" /><span></span> Free to Play</label>
+<label><input type="checkbox" name="cat[]" value="10" /><span></span> Gestión</label>
+<label><input type="checkbox" name="cat[]" value="32" /><span></span> Indies</label>
+<label><input type="checkbox" name="cat[]" value="34" /><span></span> Juegos para 3DS</label>
+<label><input type="checkbox" name="cat[]" value="36" /><span></span> Juegos para PS4</label>
+<label><input type="checkbox" name="cat[]" value="38" /><span></span> Juegos para Switch</label>
+<label><input type="checkbox" name="cat[]" value="33" /><span></span> Juegos para Wii U</label>
+<label><input type="checkbox" name="cat[]" value="26" /><span></span> Juegos para Xbox 360</label>
+<label><input type="checkbox" name="cat[]" value="25" /><span></span> Juegos para Xbox ONE</label>
+<label><input type="checkbox" name="cat[]" value="7" /><span></span> Lucha</label>
+<label><input type="checkbox" name="cat[]" value="12" /><span></span> MMO</label>
+<label><input type="checkbox" name="cat[]" value="23" /><span></span> Multijugador</label>
+<label><input type="checkbox" name="cat[]" value="3" /><span></span> Otro</label>
+<label><input type="checkbox" name="cat[]" value="13" /><span></span> Plataformas</label>
+<label><input type="checkbox" name="cat[]" value="11" /><span></span> RPG</label>
+<label><input type="checkbox" name="cat[]" value="14" /><span></span> Shoot'em up</label>
+<label><input type="checkbox" name="cat[]" value="15" /><span></span> Simulación</label>
+<label><input type="checkbox" name="cat[]" value="39" /><span></span> Suscripción para Nintendo</label>
+<label><input type="checkbox" name="cat[]" value="28" /><span></span> Suscripción para PlayStation Plus</label>
+<label><input type="checkbox" name="cat[]" value="19" /><span></span> Suscripción para Xbox Live Gold</label>
+<label><input type="checkbox" name="cat[]" value="29" /><span></span> Tarjetas Regalo PlayStation Plus</label>
+<label><input type="checkbox" name="cat[]" value="27" /><span></span> Tarjetas regalo</label>
+<label><input type="checkbox" name="cat[]" value="18" /><span></span> Wargame</label>
+<label><input type="checkbox" name="cat[]" value="21" /><span></span> Xbox Gift Cards</label>
+</div>
+
+<div class="ig-pm-morefilters-head">Precio</div>
+<div class="ig-sections-content mainshadow tcenter" id="ig-pm-morefilters-price">
+Entre <div class="ig-pm-input-bgwrapper"><input type="text" class="ig-pm-morefilters-sminput" name="min_price" value="0" data-default="0" /> €</div> y <div class="ig-pm-input-bgwrapper"><input type="text" class="ig-pm-morefilters-sminput" name="max_price" value="100" data-default="100" /> €</div> <img src="/themes/igv1/images/reload.png" class="ig-pm-resetfields" style="display: none" />
+<label id="ig-pm-noprice"><input type="checkbox" id="ck_noprice" value="1" checked="checked" /><span></span> Juegos sin precio aún</label>
+<input type="hidden" name="noprice" value="" />
+</div>
+
+<div class="ig-pm-morefilters-head">% De reducción</div>
+<div class="ig-sections-content mainshadow tcenter">
+Entre <div class="ig-pm-input-bgwrapper"><input type="text" class="ig-pm-morefilters-sminput" name="min_discount" value="0" data-default="0" /> %</div> y <div class="ig-pm-input-bgwrapper"><input type="text" class="ig-pm-morefilters-sminput" name="max_discount" value="100" data-default="100" /> %</div> <img src="/themes/igv1/images/reload.png" class="ig-pm-resetfields" style="display: none" />
+</div>
+
+<div class="ig-pm-morefilters-head">Gamers clasificaciones</div>
+<div class="ig-sections-content mainshadow tcenter" id="ig-pm-morefilters-gamersgrade">
+Entre <span class="ig-pm-morefilters-grade ig-writereview-grade ig-writereview-grade-10" data-grade="10" data-inputname="min_reviewsavg" data-default="10">10</span> y <span class="ig-pm-morefilters-grade ig-writereview-grade ig-writereview-grade-100" data-grade="100" data-inputname="max_reviewsavg" data-default="100">100</span> <img src="/themes/igv1/images/reload.png" class="ig-pm-resetfields" style="display: none" />
+<div id="ig-pm-gradeselector" style="display: none">
+<span class="ig-writereview-grade ig-writereview-grade-10" data-grade="10">10</span>
+<span class="ig-writereview-grade ig-writereview-grade-20" data-grade="20">20</span>
+<span class="ig-writereview-grade ig-writereview-grade-30" data-grade="30">30</span>
+<span class="ig-writereview-grade ig-writereview-grade-40" data-grade="40">40</span>
+<span class="ig-writereview-grade ig-writereview-grade-50" data-grade="50">50</span>
+<span class="ig-writereview-grade ig-writereview-grade-60" data-grade="60">60</span>
+<span class="ig-writereview-grade ig-writereview-grade-70" data-grade="70">70</span>
+<span class="ig-writereview-grade ig-writereview-grade-80" data-grade="80">80</span>
+<span class="ig-writereview-grade ig-writereview-grade-90" data-grade="90">90</span>
+<span class="ig-writereview-grade ig-writereview-grade-100" data-grade="100">100</span>
+</div>
+<input type="hidden" name="min_reviewsavg" value="10" />
+<input type="hidden" name="max_reviewsavg" value="100" />
+<label id="ig-pm-noreviews"><input type="checkbox" id="ck_noreviews" value="1" checked="checked" /><span></span> Juegos sin opinión</label>
+<input type="hidden" name="noreviews" value="" />
+</div>
+
+<div class="ig-pm-morefilters-head">Otros filtros</div>
+<div class="ig-sections-content mainshadow">
+<label><input type="checkbox" name="available_in" value="ES" checked="checked" /><span></span> Solo juegos válidos en mi país: <select id="ig-pm-available-in-select"><option value="AF">Afghanistan</option><option value="AX">Aland Islands</option><option value="AL">Albania</option><option value="DZ">Algeria</option><option value="AS">American Samoa</option><option value="AD">Andorra</option><option value="AO">Angola</option><option value="AI">Anguilla</option><option value="AQ">Antarctica</option><option value="AG">Antigua and Barbuda</option><option value="AR">Argentina</option><option value="AM">Armenia</option><option value="AW">Aruba</option><option value="AU">Australia</option><option value="AT" class="eu_country">Austria</option><option value="AZ">Azerbaijan</option><option value="BS">Bahamas</option><option value="BH">Bahrain</option><option value="BD">Bangladesh</option><option value="BB">Barbados</option><option value="BY">Belarus</option><option value="BE" class="eu_country">Belgium</option><option value="BZ">Belize</option><option value="BJ">Benin</option><option value="BM">Bermuda</option><option value="BT">Bhutan</option><option value="BO">Bolivia</option><option value="BA">Bosnia and Herzegovina</option><option value="BW">Botswana</option><option value="BV">Bouvet Island</option><option value="BR">Brazil</option><option value="BQ">British Antarctic Territory</option><option value="IO">British Indian Ocean Territory</option><option value="VG">British Virgin Islands</option><option value="BN">Brunei</option><option value="BG" class="eu_country">Bulgaria</option><option value="BF">Burkina Faso</option><option value="BI">Burundi</option><option value="KH">Cambodia</option><option value="CM">Cameroon</option><option value="CA">Canada</option><option value="CV">Cape Verde</option><option value="KY">Cayman Islands</option><option value="CF">Central African Republic</option><option value="TD">Chad</option><option value="CL">Chile</option><option value="CN">China</option><option value="CX">Christmas Island</option><option value="CC">Cocos [Keeling] Islands</option><option value="CO">Colombia</option><option value="KM">Comoros</option><option value="CG">Congo - Brazzaville</option><option value="CD">Congo - Kinshasa</option><option value="CK">Cook Islands</option><option value="CR">Costa Rica</option><option value="HR" class="eu_country">Croatia</option><option value="CU">Cuba</option><option value="CY" class="eu_country">Cyprus</option><option value="CZ" class="eu_country">Czech Republic</option><option value="CI">Côte d’Ivoire</option><option value="DK" class="eu_country">Denmark</option><option value="DJ">Djibouti</option><option value="DM">Dominica</option><option value="DO">Dominican Republic</option><option value="EC">Ecuador</option><option value="EG">Egypt</option><option value="SV">El Salvador</option><option value="GQ">Equatorial Guinea</option><option value="ER">Eritrea</option><option value="EE" class="eu_country">Estonia</option><option value="ET">Ethiopia</option><option value="FK">Falkland Islands</option><option value="FO">Faroe Islands</option><option value="FJ">Fiji</option><option value="FI" class="eu_country">Finland</option><option value="FR" class="eu_country">France</option><option value="GF">French Guiana</option><option value="PF">French Polynesia</option><option value="TF">French Southern Territories</option><option value="GA">Gabon</option><option value="GM">Gambia</option><option value="GE">Georgia</option><option value="DE" class="eu_country">Germany</option><option value="GH">Ghana</option><option value="GI">Gibraltar</option><option value="GR" class="eu_country">Greece</option><option value="GL">Greenland</option><option value="GD">Grenada</option><option value="GP">Guadeloupe</option><option value="GU">Guam</option><option value="GT">Guatemala</option><option value="GG">Guernsey</option><option value="GN">Guinea</option><option value="GW">Guinea-Bissau</option><option value="GY">Guyana</option><option value="HT">Haiti</option><option value="HM">Heard Island and McDonald Islands</option><option value="HN">Honduras</option><option value="HK">Hong Kong SAR China</option><option value="HU" class="eu_country">Hungary</option><option value="IS">Iceland</option><option value="IN">India</option><option value="ID">Indonesia</option><option value="IR">Iran</option><option value="IQ">Iraq</option><option value="IE" class="eu_country">Ireland</option><option value="IM">Isle of Man</option><option value="IL">Israel</option><option value="IT" class="eu_country">Italy</option><option value="JM">Jamaica</option><option value="JP">Japan</option><option value="JE">Jersey</option><option value="JO">Jordan</option><option value="KZ">Kazakhstan</option><option value="KE">Kenya</option><option value="KI">Kiribati</option><option value="KW">Kuwait</option><option value="KG">Kyrgyzstan</option><option value="LA">Laos</option><option value="LV" class="eu_country">Latvia</option><option value="LB">Lebanon</option><option value="LS">Lesotho</option><option value="LR">Liberia</option><option value="LY">Libya</option><option value="LI">Liechtenstein</option><option value="LT" class="eu_country">Lithuania</option><option value="LU" class="eu_country">Luxembourg</option><option value="MO">Macau SAR China</option><option value="MK">Macedonia</option><option value="MG">Madagascar</option><option value="MW">Malawi</option><option value="MY">Malaysia</option><option value="MV">Maldives</option><option value="ML">Mali</option><option value="MT" class="eu_country">Malta</option><option value="MH">Marshall Islands</option><option value="MQ">Martinique</option><option value="MR">Mauritania</option><option value="MU">Mauritius</option><option value="YT">Mayotte</option><option value="MX">Mexico</option><option value="FM">Micronesia</option><option value="MD">Moldova</option><option value="MC" class="eu_country">Monaco</option><option value="MN">Mongolia</option><option value="ME">Montenegro</option><option value="MS">Montserrat</option><option value="MA">Morocco</option><option value="MZ">Mozambique</option><option value="MM">Myanmar [Burma]</option><option value="NA">Namibia</option><option value="NR">Nauru</option><option value="NP">Nepal</option><option value="NL" class="eu_country">Netherlands</option><option value="AN">Netherlands Antilles</option><option value="NC">New Caledonia</option><option value="NZ">New Zealand</option><option value="NI">Nicaragua</option><option value="NE">Niger</option><option value="NG">Nigeria</option><option value="NU">Niue</option><option value="NF">Norfolk Island</option><option value="KP">North Korea</option><option value="MP">Northern Mariana Islands</option><option value="NO">Norway</option><option value="OM">Oman</option><option value="PK">Pakistan</option><option value="PW">Palau</option><option value="PS">Palestinian Territories</option><option value="PA">Panama</option><option value="PG">Papua New Guinea</option><option value="PY">Paraguay</option><option value="PE">Peru</option><option value="PH">Philippines</option><option value="PN">Pitcairn Islands</option><option value="PL" class="eu_country">Poland</option><option value="PT" class="eu_country">Portugal</option><option value="PR">Puerto Rico</option><option value="QA">Qatar</option><option value="RO" class="eu_country">Romania</option><option value="RU">Russia</option><option value="RW">Rwanda</option><option value="RE">Réunion</option><option value="BL">Saint Barthélemy</option><option value="SH">Saint Helena</option><option value="KN">Saint Kitts and Nevis</option><option value="LC">Saint Lucia</option><option value="MF">Saint Martin</option><option value="PM">Saint Pierre and Miquelon</option><option value="VC">Saint Vincent and the Grenadines</option><option value="WS">Samoa</option><option value="SM">San Marino</option><option value="SA">Saudi Arabia</option><option value="SN">Senegal</option><option value="RS">Serbia</option><option value="SC">Seychelles</option><option value="SL">Sierra Leone</option><option value="SG">Singapore</option><option value="SK" class="eu_country">Slovakia</option><option value="SI" class="eu_country">Slovenia</option><option value="SB">Solomon Islands</option><option value="SO">Somalia</option><option value="ZA">South Africa</option><option value="GS">South Georgia and the South Sandwich Islands</option><option value="KR">South Korea</option><option value="ES" class="eu_country" selected="selected">Spain</option><option value="LK">Sri Lanka</option><option value="SD">Sudan</option><option value="SR">Suriname</option><option value="SJ">Svalbard and Jan Mayen</option><option value="SZ">Swaziland</option><option value="SE" class="eu_country">Sweden</option><option value="CH">Switzerland</option><option value="SY">Syria</option><option value="ST">São Tomé and Príncipe</option><option value="TW">Taiwan</option><option value="TJ">Tajikistan</option><option value="TZ">Tanzania</option><option value="TH">Thailand</option><option value="TL">Timor-Leste</option><option value="TG">Togo</option><option value="TK">Tokelau</option><option value="TO">Tonga</option><option value="TT">Trinidad and Tobago</option><option value="TN">Tunisia</option><option value="TR">Turkey</option><option value="TM">Turkmenistan</option><option value="TC">Turks and Caicos Islands</option><option value="TV">Tuvalu</option><option value="UM">U.S. Minor Outlying Islands</option><option value="VI">U.S. Virgin Islands</option><option value="UG">Uganda</option><option value="UA">Ukraine</option><option value="AE">United Arab Emirates</option><option value="GB">United Kingdom</option><option value="US">United States</option><option value="UY">Uruguay</option><option value="UZ">Uzbekistan</option><option value="VU">Vanuatu</option><option value="VA">Vatican City</option><option value="VE">Venezuela</option><option value="VN">Vietnam</option><option value="WF">Wallis and Futuna</option><option value="EH">Western Sahara</option><option value="YE">Yemen</option><option value="ZM">Zambia</option><option value="ZW">Zimbabwe</option></select></label>
+<label><input type="checkbox" name="has_lang" value="es" /><span></span> Mostrar solo juegos disponibles en mi idioma:
+<select id="ig-pm-filter-by-lang-select">
+<option value="fr">FR</option>
+<option value="en">EN</option>
+<option value="de">DE</option>
+<option value="es" selected>ES</option>
+<option value="it">IT</option>
+<option value="ru">RU</option>
+<option value="pl">PL</option>
+<option value="pt">PT</option>
+<option value="kr">KR</option>
+<option value="cn">CN</option>
+<option value="jp">JP</option>
+</select>
+</label>
+<hr />
+<label><input type="checkbox" name="instock" value="1" /><span></span> Sólo en stock</label>
+<label><input type="checkbox" name="preorder" value="1" /><span></span> Reservas</label>
+<label><input type="checkbox" name="is_draft" value="1" /><span></span> Futuros lanzamientos</label>
+<select name="gametype">
+<option value="all" selected="selected">Juegos y DLC</option>
+<option value="dlc">Sólo DLC</option>
+<option value="games">Sólo los juegos</option>
+</select>
+</div>
+<input type="hidden" name="sort_by" value="" />
+<input type="hidden" name="query" value="" />
+</div>
+<div class="ig-pm-morefilters-center">
+<a href="/es/busquedas" id="ig-pm-morefilters-btn" class="ig-pm-morefilters-toggle" data-morefilters="Busqueda avanzada" data-lessfilters="Reducir"> Busqueda avanzada</a>
+</div>
+</div>
+</form>
+<div class="socials" id="ig-followers">
+<a class="instagram" href="https://www.instagram.com/instantgaminges/" target="_blank" rel="noopener">
+<i class="logo"></i>
+<i class="logo2"></i>
+</a>
+<a class="facebook" href="https://www.facebook.com/instant.gaming" target="_blank" rel="noopener"></a>
+<span>1 500 000+ followers</span>
+<a class="twitter" href="https://twitter.com/InstantGamingES" target="_blank" rel="noopener"></a>
+<a class="twitch" href="https://twitch.tv/instantgaminges" target="_blank" rel="noopener"></a>
+</div>
+<a id="trustpilot" target="_blank" rel="noopener" href="https://www.trustpilot.es/review/instant-gaming.com"></a>
+<script>
+	/* Facebook javascript */
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId: '252070411609330',
+			xfbml: true,
+			cookie: true,
+			version: 'v2.8'
+		});
+		FB.Event.subscribe('edge.create', function(targetUrl) {
+			if (window.dataLayer)
+				window.dataLayer.push({ 'event':'GASocial', 'dlSocialNetwork': 'Facebook', 'dlSocialAction': 'like', 'dlSocialTarget': targetUrl });
+		} );
+		FB.Event.subscribe('edge.remove', function(targetUrl) {
+			if (window.dataLayer)
+				window.dataLayer.push({ 'event':'GASocial', 'dlSocialNetwork': 'Facebook', 'dlSocialAction': 'unlike', 'dlSocialTarget': targetUrl });
+		} );
+		FB.Event.subscribe('message.send', function(targetUrl) {
+			if (window.dataLayer)
+				window.dataLayer.push({ 'event':'GASocial', 'dlSocialNetwork': 'Facebook', 'dlSocialAction': 'send', 'dlSocialTarget': targetUrl });
+		} );
+				if (window.fbAsyncInit2) {
+			window.fbAsyncInit2();
+		}
+	};
+
+	(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/es_ES/sdk.js";
+	fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+
+	/* Twitter Javascript */
+	window.twttr = (function (d,s,id) {
+		var t, js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+		js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+		return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+	}(document, "script", "twitter-wjs"));
+</script>
+<script src="https://apis.google.com/js/platform.js?onload=initGapi" async defer></script>
+<div class="feedbackBox">
+<div class="slide">
+<a class="item" href="https://www.instant-gaming.com/es/3076-comprar-the-flame-in-the-flood/">
+<div class="cover" style="background-image: url(https://s2.gaming-cdn.com/images/products/3076/157x218/the-flame-in-the-flood-cover.jpg);" title="The Flame in the Flood"></div>
+<div class="infos">
+<div class="stars" style="width: 79px;">
+<img alt="nota" title="nota" src="/themes/igv1/modules/product/images/stars2.png" />
+</div>
+<div class="user"><span class="date">Hace un minuto</span><span class="separator"> - </span>gamer-b91996</div>
+<div class="com">rapido y correcto</div>
+</div>
+</a>
+<a class="item" href="https://www.instant-gaming.com/es/621-comprar-tarjeta-playstation-network-50e-espana/">
+<div class="cover" style="background-image: url(https://s1.gaming-cdn.com/images/products/621/157x218/tarjeta-playstation-network-50e-espana-cover.jpg);" title="Tarjeta PlayStation Network 50€ (España)"></div>
+<div class="infos">
+<div class="stars" style="width: 63.2px;">
+<img alt="nota" title="nota" src="/themes/igv1/modules/product/images/stars2.png" />
+</div>
+<div class="user"><span class="date">Hace 4 minutos</span><span class="separator"> - </span>TheBigG</div>
+<div class="com">Me dio alg&uacute;n fallo, mis sietes</div>
+</div>
+</a>
+<a class="item" href="https://www.instant-gaming.com/es/621-comprar-tarjeta-playstation-network-50e-espana/">
+<div class="cover" style="background-image: url(https://s1.gaming-cdn.com/images/products/621/157x218/tarjeta-playstation-network-50e-espana-cover.jpg);" title="Tarjeta PlayStation Network 50€ (España)"></div>
+<div class="infos">
+<div class="stars" style="width: 79px;">
+<img alt="nota" title="nota" src="/themes/igv1/modules/product/images/stars2.png" />
+</div>
+<div class="user"><span class="date">Hace 22 minutos</span><span class="separator"> - </span>TheBigG</div>
+<div class="com">Mis dieses</div>
+</div>
+</a>
+<a class="item" href="https://www.instant-gaming.com/es/2-comprar-suscripcion-xbox-live-gold-3-meses/">
+<div class="cover" style="background-image: url(https://s3.gaming-cdn.com/images/products/2/157x218/suscripcion-xbox-live-gold-3-meses-cover.jpg);" title="Suscripción Xbox Live Gold 3 Meses"></div>
+<div class="infos">
+<div class="stars" style="width: 79px;">
+<img alt="nota" title="nota" src="/themes/igv1/modules/product/images/stars2.png" />
+</div>
+<div class="user"><span class="date">Hace 1 hora </span><span class="separator"> - </span>Kawasakii 91</div>
+<div class="com">Todo correcto :) </div>
+</div>
+</a>
+</div>
+<a href="/es/comentarios/" class="showall">Ver más</a>
+</div>
+</div>
+</div>
+<div id="ig-panel-center" class="ig-panel-center-semiwide">
+<div itemtype="https://schema.org/Product" itemscope>
+<div id="ig-product-main-panel">
+<div itemtype="https://schema.org/Offer" itemscope itemprop="offers">
+<meta itemprop="availability" content="http://schema.org/InStock" />
+<meta itemprop="priceCurrency" content="EUR" />
+<meta itemprop="itemCondition" content="NewCondition" />
+<meta itemprop="category" content="Software > Videojuegos > Juegos de ordenador" data-platform="Origin" />
+<meta itemprop="price" content="39.98" data-price-eur="39.98" />
+<meta itemprop="sku" content="612" />
+<meta itemprop="brand" content="Electronic Arts" />
+</div>
+<div class="product">
+<div class="blur mainshadow">
+<img class="background" src="https://s1.gaming-cdn.com/images/products/612/271x377/battlefield-5-cover.jpg" alt="Battlefield 5 background" title="Battlefield 5 background" />
+<div class="cover">
+<img class="picture" itemprop="image" src="https://s1.gaming-cdn.com/images/products/612/271x377/battlefield-5-cover.jpg" alt="Battlefield 5" title="Battlefield 5" />
+</div>
+</div>
+<div class="infos">
+<div class="shadow mainshadow">
+<div class="title" itemprop="name">
+<h1>Battlefield 5</h1>
+<a id="ig-product-main-panel-addwishlist" class="hint--top hint--rounded " data-text-add="Añadir a mi wishlist" data-text-remove="Eliminar de mi wishlist" data-hint="Añadir a mi wishlist" href="" data-prodid="612"></a>
+</div>
+<div class="subinfos">
+<a class="platform origin" href="/es/juegos/origin/"><div class="badge origin"></div>Origin</a>
+<div class="download">
+<img src="https://s3.gaming-cdn.com/themes/igv1/modules/product/images/ticked2.png">En stock
+</div>
+<div class="download">
+<img src="https://s3.gaming-cdn.com/themes/igv1/modules/product/images/ticked2.png">Descarga inmediata
+</div>
+</div>
+<div class="container ">
+<div class="details">
+<div class="quick"><img src="https://s3.gaming-cdn.com/themes/igv1/modules/product/images/hot2.png"> 305 usuarios en esta página<span></span>7 juegos a este precio</div>
+<div class="choices">
+<div class="platforms">
+<div class="button edition change">PC</div>
+<a class="button change" href="https://www.instant-gaming.com/es/3160-comprar-battlefield-5-deluxe-edition-xbox-one/" data-prodid="3160">Xbox One</a>
+</div>
+</div>
+<div class="languages">
+<span>Idiomas</span>
+Multilenguas
+</div>
+<div class="tags">
+<a class="tag" href="https://www.instant-gaming.com/es/juegos/acción/">Acción</a> <a class="tag" href="https://www.instant-gaming.com/es/juegos/fps/">FPS</a> <a class="tag" href="https://www.instant-gaming.com/es/juegos/wargame/">Wargame</a> <a class="tag" href="https://www.instant-gaming.com/es/juegos/multijugador/">Multijugador</a> </div>
+</div>
+</div>
+</div>
+<div class="buy">
+<div class="prices ">
+<div class="retail" data-retail="60.00">
+Precio de venta al público: <span>60€</span> </div>
+<div class="discount">-33%</div>
+<div class="price">39.98€</div>
+</div>
+<a href="https://www.instant-gaming.com/es/pagos-612-battlefield-5/" rel="nofollow" class="button buybutton">
+<span><img src="https://s3.gaming-cdn.com/themes/igv1/modules/product/images/secure2.png">Comprar</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="information">
+<div class="tabs">
+<a class="tab mainshadow info selected" href="https://www.instant-gaming.com/es/612-comprar-key-origin-battlefield-5/" data-tabid="#ig-product-desc-content">
+<h2>Información</h2>
+</a>
+<a class="tab mainshadow feedbacks" href="https://www.instant-gaming.com/es/612-comprar-key-origin-battlefield-5/#comments" data-tabid="#ig-product-feedbacks">
+<h2>239 comentarios</h2>
+<span class="empty">
+<span class="stars" style="width: 80px"></span>
+</span>
+</a>
+<a class="tab mainshadow productreviews " href="https://www.instant-gaming.com/es/612-criticas-battlefield-5/" data-tabid="#ig-product-reviews">
+<h2>Puntuación de los usuarios</h2>
+<span class="rate rate8" href="https://www.instant-gaming.com/es/612-criticas-battlefield-5/">78</span>
+</a>
+</div>
+<div class="info mainshadow" id="ig-product-desc-content">
+<div class="wrapper">
+<iframe id="ig-vimeo-player" src="https://player.vimeo.com/video/271630653" width="776" height="437" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+<div class="screenshots">
+<a class="fancybox" rel="fancy1" href="https://s1.gaming-cdn.com/images/products/612/screenshot/battlefield-5-wallpaper-1.jpg"><img src="https://s1.gaming-cdn.com/images/products/612/screenshot/battlefield-5-wallpaper-1-thumb.jpg" alt="Battlefield 5 screenshot 1" /></a>
+<a class="fancybox" rel="fancy1" href="https://s1.gaming-cdn.com/images/products/612/screenshot/battlefield-5-wallpaper-2.jpg"><img src="https://s1.gaming-cdn.com/images/products/612/screenshot/battlefield-5-wallpaper-2-thumb.jpg" alt="Battlefield 5 screenshot 2" /></a>
+<a class="fancybox" rel="fancy1" href="https://s1.gaming-cdn.com/images/products/612/screenshot/battlefield-5-wallpaper-3.jpg"><img src="https://s1.gaming-cdn.com/images/products/612/screenshot/battlefield-5-wallpaper-3-thumb.jpg" alt="Battlefield 5 screenshot 3" /></a>
+<a class="fancybox" rel="fancy1" href="https://s1.gaming-cdn.com/images/products/612/screenshot/battlefield-5-wallpaper-4.jpg"><img src="https://s1.gaming-cdn.com/images/products/612/screenshot/battlefield-5-wallpaper-4-thumb.jpg" alt="Battlefield 5 screenshot 4" /></a>
+<a class="fancybox" rel="fancy1" href="https://s1.gaming-cdn.com/images/products/612/screenshot/battlefield-5-wallpaper-5.jpg"><img src="https://s1.gaming-cdn.com/images/products/612/screenshot/battlefield-5-wallpaper-5-thumb.jpg" alt="Battlefield 5 screenshot 5" /></a>
+</div>
+<div class="description" itemprop="description">Vive el mayor conflicto de la humanidad con Battlefield V gracias a este regreso de la saga a sus orígenes con una representación inédita de la 2ª Guerra Mundial. Ve a la guerra con tu patrulla en un multijugador sin cuartel en modos como el inmenso Grandes operaciones y el cooperativo Armas combinadas, o experimenta el drama humano vivido durante esta época en las Historias de guerra de la campaña. Combate en ubicaciones espectaculares, totalmente inesperadas, por todo el mundo, y disfruta del Battlefield más completo hasta la fecha.<br />
+<br />
+• La 2ª Guerra Mundial como no la habías visto nunca: vive la batalla en momentos inesperados, aunque cruciales de la guerra, en esta entrega que lleva a Battlefield de vuelta a sus inicios.<br />
+<br />
+• Multijugador de hasta 64 jugadores en una guerra sin cuartel: dirige a tu compañía en un multijugador sin cuartel y vive nuevas experiencias con el inmenso modo Grandes operaciones. Juega en modos clásicos como Conquista o alíate con tus amigos en el cooperativo Armas combinadas.<br />
+<br />
+• El Battlefield más físico hasta la fecha: muévete por el campo de batalla con nuevos ajustes de movimiento para el soldado, fortificaciones y herramientas de destrucción móviles.<br />
+<br />
+• Juega Historias de guerra inéditas: experimenta el drama humano vivido durante la época en las Historias de guerra de la campaña. Deslízate por las montañas noruegas y lucha por el control de las líneas de suministro de armas nucleares, combate en primera línea con las tropas coloniales francesas o atraviesa las líneas enemigas en el norte de África con una banda de renegados con el fin de crear el caos.<br />
+<br />
+• Vientos de guerra: embárcate en un viaje donde las nuevas entregas de contenido os transportan a tu compañía y a ti a una gran variedad de ubicaciones clave de la 2ª G.M., donde os esperan nuevos campos de batalla y equipamiento.
+</div>
+<div class="release">Fecha de lanzamiento
+<span>20 noviembre 2018</span>
+</div>
+<div class="hardspecs">
+<table>
+<tr><td colspan="2" class="header">Configuración mínima*</td></tr>
+<tr>
+<td class="title">OS</td>
+<td class="value">Win 7 64</td>
+</tr>
+<tr>
+<td class="title">CPU</td>
+<td class="value">Core i5-6600K 3.5GHz / FX-6350</td>
+</tr>
+<tr>
+<td class="title">RAM</td>
+<td class="value">8 GB</td>
+</tr>
+<tr>
+<td class="title">GPU</td>
+<td class="value">GeForce GTX 660 / Radeon HD 7850</td>
+</tr>
+<tr>
+<td class="title">HDD</td>
+<td class="value">50 GB</td>
+</tr>
+</table>
+<table>
+<tr><td colspan="2" class="header">Configuración recomendada*</td></tr>
+<tr>
+<td class="title">OS</td>
+<td class="value">Win 10 64</td>
+</tr>
+<tr>
+<td class="title">CPU</td>
+<td class="value">Core i7-4790 4-Core 3.6GHz / FX-8350</td>
+</tr>
+<tr>
+<td class="title">RAM</td>
+<td class="value">16 GB</td>
+</tr>
+<tr>
+<td class="title">GPU</td>
+<td class="value">GeForce GTX 1060 / Radeon RX 480 4GB</td>
+</tr>
+<tr>
+<td class="title">HDD</td>
+<td class="value">50 GB</td>
+</tr>
+</table>
+<div class="asterix center">*Los tags y los requisitos están incluidos solo con fines informativos</div>
+</div>
+<div class="tuto">
+<a class="fancybox button" href="/es/tutorial-origin" data-fancybox-type="ajax" rel="nofollow"><img src="https://s2.gaming-cdn.com/themes/igv1/modules/product/images/runner.png">Cómo activar un juego para Origin</a>
+</div>
+</div>
+<div class="coms mainshadow" id="ig-product-feedbacks" style="display: none">
+<div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+<meta itemprop="reviewCount" content="239" />
+<meta itemprop="ratingValue" content="5" />
+</div>
+<div class="list" id="feedback-list">
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p11" href="https://www.instant-gaming.com/es/user/gamer-967e46">
+<img src="https://s2.gaming-cdn.com/themes/igv1/modules/loginBox/images/ig-avatar-white.png" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-967e46">Ardilla_Rabiosa</a> - 07 dic 21:37</div>
+<div class="text">Super r&aacute;pido y fiable!</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p15" href="https://www.instant-gaming.com/es/user/gamer-857809">
+<img src="https://s2.gaming-cdn.com/themes/igv1/modules/loginBox/images/ig-avatar-white.png" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-857809">gamer-857809</a> - 07 dic 18:05</div>
+<div class="text">Perfecto. en 10seg.</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p33" href="https://www.instant-gaming.com/es/user/gamer-39f2b2">
+<img src="https://graph.facebook.com/10211093029429481/picture?width=150&height=150" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-39f2b2">gamer-39f2b2</a> - 07 dic 17:34</div>
+<div class="text">perfecto</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p15" href="https://www.instant-gaming.com/es/user/gamer-24df75">
+<img src="https://s3.gaming-cdn.com/themes/igv1/modules/loginBox/images/ig-avatar-white.png" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-24df75">Matt</a> - 07 dic 13:27</div>
+<div class="text">Excelente y rapido</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p44" href="https://www.instant-gaming.com/es/user/gamer-13821f">
+<img src="https://s3.gaming-cdn.com/themes/igv1/modules/loginBox/images/ig-avatar-white.png" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-13821f">oggeid</a> - 07 dic 10:50</div>
+<div class="text">R&aacute;pido y efectivo, como siempre</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p22" href="https://www.instant-gaming.com/es/user/gamer-569d24">
+<img src="https://s1.gaming-cdn.com/images/avatars/5627685-1541966680.jpg" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-569d24">caboJm</a> - 07 dic 09:51</div>
+<div class="text">gracias ig, rapido y eficaz como siempre.</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p52" href="https://www.instant-gaming.com/es/user/gamer-90741a">
+<img src="https://s1.gaming-cdn.com/themes/igv1/modules/loginBox/images/ig-avatar-white.png" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-90741a">Manuel</a> - 06 dic 22:13</div>
+<div class="text">barato , rapido y perfecto . gracias</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p26" href="https://www.instant-gaming.com/es/user/gamer-dd7328">
+<img src="https://s1.gaming-cdn.com/images/avatars/3296091-1499447032.jpg" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-dd7328">Mikelov</a> - 06 dic 10:41</div>
+<div class="text">Coma sempre, tudo OK</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p37" href="https://www.instant-gaming.com/es/user/gamer-cb62ca">
+<img src="https://s2.gaming-cdn.com/themes/igv1/modules/loginBox/images/ig-avatar-white.png" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-cb62ca">Geludka</a> - 06 dic 08:36</div>
+<div class="text">Todo correcto</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p52" href="https://www.instant-gaming.com/es/user/tavit0hd">
+<img src="https://s1.gaming-cdn.com/images/avatars/1992327-1524746226.jpg" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/tavit0hd">Tavit0HD</a> - 06 dic 04:40</div>
+<div class="text">Excelente como siempre pagas y al segundo te sale la key en la pantalla</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p19" href="https://www.instant-gaming.com/es/user/gamer-45c601">
+<img src="https://s2.gaming-cdn.com/images/avatars/6474634-1544066368.jpg" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-45c601">elkeko823</a> - 06 dic 04:16</div>
+<div class="text">excelente servicio </div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p19" href="https://www.instant-gaming.com/es/user/carlosmzi">
+<img src="https://s2.gaming-cdn.com/themes/igv1/modules/loginBox/images/ig-avatar-white.png" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/carlosmzi">carlosmzi</a> - 06 dic 03:56</div>
+<div class="text">genial, llego casi al instante el codigo</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p44" href="https://www.instant-gaming.com/es/user/JOHANSKA">
+<img src="https://s1.gaming-cdn.com/images/avatars/2463552-1500450050.jpg" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/JOHANSKA">JOHANSKA</a> - 05 dic 21:15</div>
+<div class="text">PERFECTO AL INSTANTE!!!</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p26" href="https://www.instant-gaming.com/es/user/gamer-21f28c">
+<img src="https://s1.gaming-cdn.com/images/avatars/3090435-1483223351.jpg" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 63.2px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-21f28c">baguvixhesoy</a> - 05 dic 19:03</div>
+<div class="text">op</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p41" href="https://www.instant-gaming.com/es/user/gamer-a75341">
+<img src="https://graph.facebook.com/10203324205703730/picture?width=150&height=150" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-a75341">TaysonZc</a> - 05 dic 19:02</div>
+<div class="text">Llegada del c&oacute;digo casi instantateno</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p41" href="https://www.instant-gaming.com/es/user/gamer-580f64">
+<img src="https://graph.facebook.com/1707326779309366/picture?width=150&height=150" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-580f64">IronHound</a> - 05 dic 08:36</div>
+<div class="text">R&Aacute;PIDO Y PERFECTO C&Oacute;MO SIEMPRE</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p30" href="https://www.instant-gaming.com/es/user/gamer-25c532">
+<img src="https://s1.gaming-cdn.com/themes/igv1/modules/loginBox/images/ig-avatar-white.png" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-25c532">gamer-25c532</a> - 05 dic 01:47</div>
+<div class="text">gracias :)</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p37" href="https://www.instant-gaming.com/es/user/gamer-af5ec3">
+<img src="https://graph.facebook.com/10207786029591294/picture?width=150&height=150" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-af5ec3">CapitanFormosa</a> - 04 dic 23:24</div>
+<div class="text">instant play</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p19" href="https://www.instant-gaming.com/es/user/gamer-309b0f">
+<img src="https://s3.gaming-cdn.com/themes/igv1/modules/loginBox/images/ig-avatar-white.png" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-309b0f">gamer-309b0f</a> - 04 dic 20:54</div>
+<div class="text">todo correcto</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p37" href="https://www.instant-gaming.com/es/user/gamer-1cc839">
+<img src="https://s1.gaming-cdn.com/themes/igv1/modules/loginBox/images/ig-avatar-white.png" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-1cc839">raffias</a> - 04 dic 01:51</div>
+<div class="text">DEMASIADO R&Aacute;PIDO Y ECON&Oacute;MICO EN COMPARACI&Oacute;N DE OTRAS PLATAFORMAS</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p33" href="https://www.instant-gaming.com/es/user/gamer-dc901a">
+<img src="https://s3.gaming-cdn.com/images/avatars/4826843-1535662668.jpg" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-dc901a">gamer-dc901a</a> - 04 dic 00:41</div>
+<div class="text">M&aacute;s r&aacute;pido imposible<br />
+</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p44" href="https://www.instant-gaming.com/es/user/gamer-42966d">
+<img src="https://s1.gaming-cdn.com/themes/igv1/modules/loginBox/images/ig-avatar-white.png" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-42966d">MrBobsan</a> - 03 dic 20:14</div>
+<div class="text">Perfecto</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p22" href="https://www.instant-gaming.com/es/user/gamer-b7d2a2">
+<img src="https://s3.gaming-cdn.com/themes/igv1/modules/loginBox/images/ig-avatar-white.png" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-b7d2a2">Nostramo</a> - 03 dic 19:25</div>
+<div class="text">Como de costumbre, un servicio absolutamente impecable. Mi clave en unos 30 segundos despu&eacute;s del pago. Gracias!</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p41" href="https://www.instant-gaming.com/es/user/gamer-b1cfeb">
+<img src="https://s3.gaming-cdn.com/themes/igv1/modules/loginBox/images/ig-avatar-white.png" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-b1cfeb">SOLIDTACHO</a> - 02 dic 13:10</div>
+<div class="text">C&oacute;digo al instante, como siempre todo perfecto con IG. Buen precio y servicio sin problemas. 10</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p37" href="https://www.instant-gaming.com/es/user/gamer-7b5a83">
+<img src="https://graph.facebook.com/1097147930/picture?width=150&height=150" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-7b5a83">JotaRsV</a> - 02 dic 09:10</div>
+<div class="text">Como siempre perfecto, rapido y sin ninguna compricacion.</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p22" href="https://www.instant-gaming.com/es/user/gamer-7e0a93">
+<img src="https://s2.gaming-cdn.com/themes/igv1/modules/loginBox/images/ig-avatar-white.png" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-7e0a93">gamer-7e0a93</a> - 02 dic 04:41</div>
+<div class="text">Buena</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p15" href="https://www.instant-gaming.com/es/user/gamer-3f23c6">
+<img src="https://s1.gaming-cdn.com/themes/igv1/modules/loginBox/images/ig-avatar-white.png" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-3f23c6">gamer-3f23c6</a> - 01 dic 20:47</div>
+<div class="text">Excelente! Instant&aacute;neo, seg&uacute;n se paga ofrecen el c&oacute;digo.</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p41" href="https://www.instant-gaming.com/es/user/gamer-f3b1d7">
+<img src="https://s3.gaming-cdn.com/images/avatars/4485890-1529506812.jpg" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 31.6px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-f3b1d7">gamer-Leo30</a> - 01 dic 15:10</div>
+<div class="text">No me gusto, tengo I7+ GTX1070 y no funciona del todo perfecto, bajones cuando disparo al enemigo, mucho lag y el juego no es muy divertido, BF 1 es mucho mejor y funcionaba mucho mejor en su salida, lo jugue desde el primer dia.</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p41" href="https://www.instant-gaming.com/es/user/gamer-f3b1d7">
+<img src="https://s3.gaming-cdn.com/images/avatars/4485890-1529506812.jpg" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 31.6px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-f3b1d7">gamer-Leo30</a> - 01 dic 15:10</div>
+<div class="text">No me gusto, tengo I7+ GTX1070 y no funciona del todo perfecto, bajones cuando disparo al enemigo, mucho lag y el juego no es muy divertido, BF 1 es mucho mejor y funcionaba mucho mejor en su salida, lo jugue desde el primer dia.</div>
+</div>
+</div>
+<div class="item">
+<div class="avatar-container">
+<a class="avatar p48" href="https://www.instant-gaming.com/es/user/gamer-c67591">
+<img src="https://s3.gaming-cdn.com/themes/igv1/modules/loginBox/images/ig-avatar-white.png" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars" style="width: 79px;"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="https://www.instant-gaming.com/es/user/gamer-c67591">Metesaker</a> - 01 dic 14:57</div>
+<div class="text">Todo ok</div>
+</div>
+</div>
+</div>
+<div class="seemore" id="ig-product-feedback-next">
+<a class="button" href="https://www.instant-gaming.com/es/612-comprar-key-origin-battlefield-5/">Ver más</a>
+<input id="ig-product-feedback-prod" type="hidden" name="prod_id" value="612" />
+<input id="ig-product-feedback-lang" type="hidden" name="lang" value="es" />
+<input id="ig-product-feedback-start" type="hidden" name="start" value="30" />
+<div class="feedback-product-template item" style="display: none">
+<div class="avatar-container">
+<a class="avatar " href="">
+<img src="" class="ig-avatar" />
+</a> </div>
+<div class="content">
+<div class="stars"><img alt="note" title="note" src="https://s1.gaming-cdn.com/themes/igv1/modules/product/images/stars2.png" /></div>
+<div class="nickname"><a href="#"></a> - <span class="date"></span></div>
+<div class="text"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="productreviews" id="ig-product-reviews" style="display: none">
+<div class="header mainshadow">
+<img src="https://www.instant-gaming.com/images/products/612/271x377/612.jpg" />
+<div class="content">
+<h3>Criticas Battlefield 5 (99 Reseñas)</h3>
+<span class="rate rate8">78 <span>/100</span></span>
+</div>
+</div>
+<a class="write" href="#"><span></span>¡Valora este juego!</a>
+<div class="ig-filter-content mainshadow tcenter" style="display: none">
+Mostrar reviews entre<span id="span_min_reviewsavg" class="ig-review-morefilter-grade ig-writereview-grade ig-writereview-grade-10" data-grade="10" data-inputname="min_reviewsavg">10</span>y<span id="span_max_reviewsavg" class="ig-review-morefilter-grade ig-writereview-grade ig-writereview-grade-100" data-grade="100" data-inputname="max_reviewsavg">100</span>
+<div class="reload hide">
+<img src="/themes/igv1/images/reload.png" class="reload" />
+</div>
+<div id="ig-review-gradeselector" style="display: none">
+<span class="ig-writereview-grade ig-writereview-grade-10" data-grade="10">10</span>
+<span class="ig-writereview-grade ig-writereview-grade-20" data-grade="20">20</span>
+<span class="ig-writereview-grade ig-writereview-grade-30" data-grade="30">30</span>
+<span class="ig-writereview-grade ig-writereview-grade-40" data-grade="40">40</span>
+<span class="ig-writereview-grade ig-writereview-grade-50" data-grade="50">50</span>
+<span class="ig-writereview-grade ig-writereview-grade-60" data-grade="60">60</span>
+<span class="ig-writereview-grade ig-writereview-grade-70" data-grade="70">70</span>
+<span class="ig-writereview-grade ig-writereview-grade-80" data-grade="80">80</span>
+<span class="ig-writereview-grade ig-writereview-grade-90" data-grade="90">90</span>
+<span class="ig-writereview-grade ig-writereview-grade-100" data-grade="100">100</span>
+</div>
+</div>
+<div id="ig-product-reviews-loading"><img src="/themes/igv1/images/ajax-loader.gif" /></div>
+</div>
+</div>
+<div class="recommended">
+<div class="title">También podría gustarte...</div>
+<a class="item mainshadow" href="https://www.instant-gaming.com/es/2468-comprar-key-battlenet-call-of-duty-black-ops-4/">
+<img class="picture" src="https://s3.gaming-cdn.com/images/products/2468/271x377/call-of-duty-black-ops-4-cover.jpg">
+<div class="shadow">
+<div class="discount">-24%</div>
+<div class="price">45.79€</div>
+</div>
+</a>
+<a class="item mainshadow" href="https://www.instant-gaming.com/es/2644-comprar-key-fallout-76/">
+<img class="picture" src="https://s2.gaming-cdn.com/images/products/2644/271x377/fallout-76-cover.jpg">
+<div class="shadow">
+<div class="discount">-43%</div>
+<div class="price">34.49€</div>
+</div>
+</a>
+<a class="item mainshadow" href="https://www.instant-gaming.com/es/3216-comprar-key-steam-world-war-3-early-access/">
+<img class="picture" src="https://s1.gaming-cdn.com/images/products/3216/271x377/world-war-3-early-access-cover.jpg">
+<div class="shadow">
+<div class="discount">-18%</div>
+<div class="price">20.54€</div>
+</div>
+</a>
+<a class="item mainshadow" href="https://www.instant-gaming.com/es/1421-comprar-key-origin-battlefield-1/">
+<img class="picture" src="https://s3.gaming-cdn.com/images/products/1421/271x377/battlefield-1-cover.jpg">
+<div class="shadow">
+<div class="discount">-81%</div>
+<div class="price">11.49€</div>
+</div>
+</a>
+</div>
+</div>
+<script>
+var star_width = 15.8;
+var price_format = '%s€';
+var twitch_player = null;
+window.manual_signup_url = '/es/crea-tu-cuenta/?after_signup=' + window.location.href;
+$(function() {
+	if ($('#ig-associate-product-avail').length > 0) {
+		$.fancybox.open( { 'href' : '#ig-associate-product-avail', 'padding' : 0 } );
+		$('.close-fancybox').click(function() { $.fancybox.close(); });
+	}
+		$('a.tab').click(function() {
+		if ($(this).hasClass('selected'))
+			return false;
+		if (!$(this).data('tabid'))
+			return true
+
+		$('a.tab').not(this).each(function() { $($(this).data('tabid')).hide(); });
+		$($(this).data('tabid')).show();
+		$('.tab.selected').removeClass('selected');
+		$(this).addClass('selected');
+
+				if ($(this).data('tabid') == '#ig-product-reviews') {
+			if ($('#ig-product-reviews-content').length == 0) {
+				$.get($(this).attr('href'), 'ajax=1', function(html) {
+					$('#ig-product-reviews-loading').remove();
+					$('#ig-product-reviews').append(html);
+					if ($('#ig-product-reviews-content .ig-product-review').length > 0)
+						$('.ig-filter-content').show();
+				});
+			}
+		}
+
+		window.history.pushState('', '', $(this).attr('href'));
+		return false;
+	});
+	$('#ig-product-live a.item').click(function() {
+		twitch_player.setChannel($(this).data('channel'));
+		$('#ig-product-live .live').removeClass('live');
+		$(this).addClass('live');
+		return false;
+	});
+
+    if (location.hash === '#comments')
+    	$('a.tab.feedbacks').click();
+    else if (location.hash === '#live')
+    	$('a.tab.live').click();
+
+    });
+	setTimeout(function() { showBlackBubble("Última compra de este producto: Hace menos de un minuto"); }, 5500);
+</script>
+</div>
+<div id="ig-bottom-block-panel">
+</div>
+</div>
+<div class="footer">
+<div id="ig-copyright">Copyright © 2005 - 2018 Instant Gaming - Instant Gaming Ltd - Hong Kong</div>
+<div class="ig-flags-box">
+<div class="ig-languages-flags" style="display: none">
+<a class="ig-flags flagfr" href="https://www.instant-gaming.com/fr/612-acheter-cle-origin-battlefield-5/" title="fr">&nbsp;</a>
+<a class="ig-flags flagen" href="https://www.instant-gaming.com/en/612-buy-key-origin-battlefield-5/" title="en">&nbsp;</a>
+<a class="ig-flags flagde" href="https://www.instant-gaming.com/de/612-kaufen-key-origin-battlefield-5/" title="de">&nbsp;</a>
+<a class="ig-flags flages" href="https://www.instant-gaming.com/es/612-comprar-key-origin-battlefield-5/" title="es">&nbsp;</a>
+<a class="ig-flags flagit" href="https://www.instant-gaming.com/it/612-comprare-key-origin-battlefield-5/" title="it">&nbsp;</a>
+<a class="ig-flags flagpt" href="https://www.instant-gaming.com/pt/612-comprar-key-origin-battlefield-5/" title="pt">&nbsp;</a>
+<a class="ig-flags flagda" href="https://www.instant-gaming.com/da/612-koeb-key-origin-battlefield-5/" title="da">&nbsp;</a>
+<a class="ig-flags flagnl" href="https://www.instant-gaming.com/nl/612-betaling-key-origin-battlefield-5/" title="nl">&nbsp;</a>
+</div>
+<div class="ig-language-selected">
+es <div class="ig-flags-container flages">&nbsp;</div>
+</div>
+<div class="ig-currencies" style="display: none">
+<a class="ig-currency" href="?currency=EUR" rel="nofollow" title="€"><span>€</span></a>
+<a class="ig-currency" href="?currency=USD" rel="nofollow" title="$"><span>$</span></a>
+<a class="ig-currency" href="?currency=GBP" rel="nofollow" title="£"><span>£</span></a>
+<a class="ig-currency" href="?currency=DKK" rel="nofollow" title="kr"><span>kr</span></a>
+<a class="ig-currency" href="?currency=CHF" rel="nofollow" title="CHF"><span>CHF</span></a>
+<a class="ig-currency" href="?currency=BRL" rel="nofollow" title="R$"><span>R$</span></a>
+<a class="ig-currency" href="?currency=CAD" rel="nofollow" title="C$"><span>C$</span></a>
+<a class="ig-currency" href="?currency=RSD" rel="nofollow" title="RSD"><span>RSD</span></a>
+<a class="ig-currency" href="?currency=CZK" rel="nofollow" title="CZK"><span>CZK</span></a>
+<a class="ig-currency" href="?currency=AUD" rel="nofollow" title="A$"><span>A$</span></a>
+<a class="ig-currency" href="?currency=SEK" rel="nofollow" title="SEK"><span>SEK</span></a>
+<a class="ig-currency" href="?currency=PLN" rel="nofollow" title="zł"><span>zł</span></a>
+</div>
+<div class="ig-currency-selected">
+EUR <span>€</span>
+</div>
+</div>
+<div class="links">
+<a href="https://www.instant-gaming.com/es/">Inicio</a><span class="ig-footer-separator">|</span>
+<a href="https://www.instant-gaming.com/es/terminos-y-condiciones/">Términos y condiciones</a><span class="ig-footer-separator">|</span>
+<a href="https://www.instant-gaming.com/es/pagos-seguros/">Pago seguro</a><span class="ig-footer-separator">|</span>
+<a href="https://www.instant-gaming.com/es/politicas-de-privacidad/">Política de privacidad </a><span class="ig-footer-separator">|</span>
+<a class="ig-show-loginbox ig-contact-btn" href="https://www.instant-gaming.com/es/contactanos/">Contacto</a><span class="ig-footer-separator">|</span>
+<a href="https://www.instant-gaming.com/es/redeem/">Canjear una tarjeta regalo</a><span class="ig-footer-separator">|</span>
+<a href="https://www.instant-gaming.com/es/preguntas-mas-frecuentes/">FAQ</a>
+</div>
+</div>
+<div id="ig-sections-paymentlogo">
+<hr />
+<a class="ig-paymentlogo-hipay" href="https://www.instant-gaming.com/es/pagos-seguros/"></a>
+
+<a class="ig-paymentlogo-paysafecard" href="https://www.instant-gaming.com/es/pagos-seguros/"></a>
+<a class="ig-paymentlogo-skrill" href="https://www.instant-gaming.com/es/pagos-seguros/"></a>
+<a class="ig-paymentlogo-paypal" href="https://www.instant-gaming.com/es/pagos-seguros/"></a>
+<a class="ig-paymentlogo-bitpay" href="https://www.instant-gaming.com/es/pagos-seguros/"></a>
+</div>
+</div>
+<div id="ig-loginbox-register-ajax-container">
+<h2 class="ig-register-ajax-header">Crea tu cuenta en IG para continuar</h2>
+<div class="ig-wrapper2" id="ig-productbuy-login">
+<div class="ig-productbuy-login-leftpanel">
+<h3>Conectarse con</h3>
+<div class="ig-loginbox-wrapper">
+<a href="/es/crea-tu-cuenta/" class="signin-btn signin-btn-fb"></a>
+<a href="/es/crea-tu-cuenta/" class="signin-btn signin-btn-google"></a>
+<center>
+<div class="or">o</div>
+<a href="/es/crea-tu-cuenta/" id="ig-register-manual">Registre manualmente para una cuenta de IG</a>
+</center>
+</div>
+</div>
+<div class="ig-productbuy-login-rightpanel">
+<h3>Ya tengo una cuenta en IG</h3>
+<div class="ig-loginbox-wrapper">
+<form class="ig-login-form" action="https://www.instant-gaming.com/es/" method="post">
+<input class="ig-login-email ig-login-input" type="email" name="email" value="Email" required />
+<input class="ig-login-pass ig-login-input" type="password" name="password" value="*********" required />
+<input type="hidden" name="usid" value="dd17a3f164fd2111154fa7cead9a7ad6" />
+<input type="hidden" name="process" value="login" />
+<input type="hidden" name="ajax" value="true" />
+<input class="ig-login-submit ig-login-input-ok" type="submit" value="OK" />
+</form>
+<div class="ig-login-links"><a href="https://www.instant-gaming.com/es/contrasenas-olvidadas/">¿Has olvidado la contraseña?</a></div>
+</div>
+</div>
+<div class="clear"></div>
+<p id="ig-loginbox-giveaways" style="display: none">¡Crear tu cuenta nos permite entregarte el juego que has escogido directamente cuando termine el sorteo si eres el ganador!</p>
+<p>Mantendremos tus datos privados y nunca venderemos tu información para uso comercial.
+<span id="ig-loginbox-contactdetails" style="display: none">
+<br /><br /><small><small>Instant Gaming Ltd, St 2611, Langham Place Off Tw, 8 Argyle Street Mongkok, HK - RN 1808100<br>
+Payop Ltd, 71-75 Shelton Street, Covent Garden, WC2H9JQ London, UK - RN 10390479<small></small>
+</span>
+</p>
+</div> </div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"548e8d9732","applicationID":"6048502","transactionName":"ZFMHY0RUWxcAV0VbCV0ZJkJFQVoJTkRDXQJGVRE=","queueTime":0,"applicationTime":49,"atts":"SBQEFQxOSBk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
