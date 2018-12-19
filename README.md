@@ -7,6 +7,7 @@ Practicas realizadas en la asignatura Modelos de Computación - Dpto. de Ciencia
 
 - Lex Scanner Generator
 - C++
+- [Atom.io](https://atom.io/)
 
 ## Descripción
 
@@ -14,7 +15,7 @@ Pensar un problema original de procesamiento de textos. Para la resolución de e
 
 ### Mi solución
 
-Para la resolución de este ejercicio hice un programa el cual extrae la información de [*Instant-Gaming*](https://www.instant-gaming.com/es/) para un videojuego concreto.
+Para la resolución de este ejercicio hice un programa el cual extrae la información de [*Instant-Gaming*](https://www.instant-gaming.com/es/) para un videojuego concreto utilizando su código fuente html.
 
 - Título de la entrega
 - Portada
